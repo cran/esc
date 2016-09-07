@@ -2,8 +2,8 @@ Package: esc
 Type: Package
 Encoding: UTF-8
 Title: Effect Size Computation for Meta Analysis
-Version: 0.1.0
-Date: 2016-06-07
+Version: 0.2.0
+Date: 2016-09-07
 Author: Daniel Lüdecke <d.luedecke@uke.de>
 Maintainer: Daniel Lüdecke <d.luedecke@uke.de>
 Description: Implementation of the web-based 'Practical Meta-Analysis Effect Size
@@ -12,10 +12,11 @@ Description: Implementation of the web-based 'Practical Meta-Analysis Effect Siz
     coefficient r or Fisher's transformation z, odds ratio or log odds effect size.
 License: GPL-3
 Depends: R (>= 3.2), stats
+Imports: readr, utils
 URL: https://github.com/sjPlot/esc
 BugReports: https://github.com/sjPlot/esc/issues
 RoxygenNote: 5.0.1
 NeedsCompilation: no
-Packaged: 2016-07-08 16:02:41 UTC; Standardbenutzer
+Packaged: 2016-09-07 11:25:19 UTC; Standardbenutzer
 Repository: CRAN
-Date/Publication: 2016-07-08 18:47:25
+Date/Publication: 2016-09-07 14:41:32
