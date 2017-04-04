@@ -45,8 +45,8 @@ If \code{es.type = "r"}, Fisher's transformation for the effect size
       \code{r} and their confidence intervals are also returned.
 }
 \examples{
-esc_beta(1.25, 3, 100, 150)
-esc_beta(1.25, 3, 100, 150, es.type = "cox.log")
+esc_beta(.7, 3, 100, 150)
+esc_beta(.7, 3, 100, 150, es.type = "cox.log")
 
 }
 \references{
@@ -54,4 +54,3 @@ Lipsey MW, Wilson DB. 2001. Practical meta-analysis. Thousand Oaks, Calif: Sage 
             \cr \cr
             Wilson DB. 2016. Formulas Used by the "Practical Meta-Analysis Effect Size Calculator". Unpublished manuscript: George Mason University
 }
-
