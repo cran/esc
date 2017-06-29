@@ -1,5 +1,5 @@
-esc - Effect Size Computation for Meta Analysis
-------------------------------------------------------------------------------
+# esc - Effect Size Computation for Meta Analysis <img src="man/figures/logo.png" align="right" />
+
 This is an R implementation of the web-based 'Practical Meta-Analysis Effect Size Calculator' from David B. Wilson. The original calculator can be found at http://www.campbellcollaboration.org/escalc/html/EffectSizeCalculator-Home.php.
 
 Based on the input, the effect size can be returned as standardized mean difference (`d`), Hedges' `g`, correlation coefficient effect size `r` or Fisher's transformation `z`, odds ratio or log odds effect size.
@@ -62,6 +62,20 @@ To install the latest development snapshot (see latest changes below), type foll
 ```r
 library(devtools)
 devtools::install_github("strengejacke/esc")
+```
+
+### Officiale, stable release
+
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/esc)](https://cran.r-project.org/package=esc)
+&#160;&#160;
+[![downloads](http://cranlogs.r-pkg.org/badges/esc)](http://cranlogs.r-pkg.org/)
+&#160;&#160;
+[![total](http://cranlogs.r-pkg.org/badges/grand-total/esc)](http://cranlogs.r-pkg.org/)
+
+To install the latest stable release from CRAN, type following command into the R console:
+
+```r
+install.packages("esc")
 ```
 
 ## Citation
