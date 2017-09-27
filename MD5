@@ -1,7 +1,7 @@
-09a73d9eb7ab87d1f73c13a005b8185f *DESCRIPTION
+712922f9f268affb9ec8db4f6327207d *DESCRIPTION
 6d06a9ed9ce75bbacfceb11bbacfa409 *NAMESPACE
-930dd7cd66f5405d481542997fd1f982 *NEWS
-a7fb0961d03561049826a26efed86d7b *NEWS.md
+1351699be949073ca1553e91f109ae16 *NEWS
+059cc068d7dfb10d1466f18ca2d3c645 *NEWS.md
 69605f4ed2bfba180f85ed3ed92875e9 *R/S3-methods.R
 c00a070a944498683c6c9fa5203ddfd3 *R/combine_esc.R
 0e54e01fb05eb4a18cee8fc21498008c *R/esc.R
@@ -19,11 +19,11 @@ ed536ff63bc901b6a3010b4b6ba53f2e *R/esc_f.R
 97b1958c58de5a47f58c23b8c081933d *R/esc_mean_sd.R
 f0da4cfc97013aa04974f389bffa6a25 *R/esc_or2d.R
 8ce689742b045652c7230f1224881158 *R/esc_rpb.R
-14a88754e7a1b65bdfd22255d748ba4b *R/esc_t.R
+ef31bab3f44a54f6533e4aa5d1b18e65 *R/esc_t.R
 cac1a5dd3e9b2b59e98b97f09f8cd038 *R/esc_z2r.R
 00aceeec47e67cca96526c8e62c590bc *R/hedges_g.R
 9d8dc0c22c0b5e4c2404553c4a585c56 *README.md
-71b145b63988eb72828f6a043bb9e532 *build/partial.rdb
+a33bf6d618a38e780e8296edd52a78ac *build/partial.rdb
 bf1a44681b04c1d46df073d946a8d762 *inst/CITATION
 2d28533425e24e99cf9221688aba0d25 *man/combine_esc.Rd
 c31a8749cffe10d764e2aeec906cb675 *man/effect_sizes.Rd
