@@ -55,15 +55,24 @@ esc_mean_sd <- function(grp1m, grp1sd, grp1n, grp2m, grp2sd, grp2n, totalsd,
   dm <- grp1m - grp2m
 
   # compute pooled standard deviation.
-  if (!missing(totalsd) && !is.null(totalsd))
+  if (!missing(totalsd) && !is.null(totalsd)) {
+
     # pooled sd from full sample sd, formula from book
-    sd_pooled <- sqrt(((totalsd ^ 2 * (totaln - 1) - ((dm ^ 2 * grp1n * grp2n) / totaln)) / (totaln - 1)))
+    sdp <- ((totalsd ^ 2 * (totaln - 1) - ((dm ^ 2 * grp1n * grp2n) / totaln)) / (totaln - 1))
+
     # pooled sd from full sample sd, formula from unpublished manuscript. formulas vary,
     # email-correspondence with author suggests that book-formula should be correct
-    # sd_pooled <- sqrt((totalsd ^ 2 * (totaln - 1) - ((grp1m ^ 2 + grp2m ^ 2 - 2 * grp1m * grp2m) / totaln)) / totaln)
-  else
+    # however, in some case value might be negative, so sqrt is not possible, use
+    # alternative formula then
+    if (sdp < 0)
+      sdp <- (totalsd ^ 2 * (totaln - 1) - ((grp1m ^ 2 + grp2m ^ 2 - 2 * grp1m * grp2m) / totaln)) / totaln
+
+    sd_pooled <- sqrt(sdp)
+
+  } else {
     # pooled sd from group sd's
     sd_pooled <- sqrt((grp1sd ^ 2 * (grp1n - 1) + grp2sd ^ 2 * (grp2n - 1)) / (grp1n + grp2n - 2))
+  }
 
   # compute effect size
   es <- (grp1m - grp2m) / sd_pooled
@@ -71,8 +80,15 @@ esc_mean_sd <- function(grp1m, grp1sd, grp1n, grp2m, grp2sd, grp2n, totalsd,
   v <- esc.vd(es, grp1n, grp2n)
 
   # return effect size
-  return(esc_generic(es = es, v = v, es.type = es.type, grp1n = grp1n, grp2n = grp2n,
-                     info = "mean and sd", study = study))
+  esc_generic(
+    es = es,
+    v = v,
+    es.type = es.type,
+    grp1n = grp1n,
+    grp2n = grp2n,
+    info = "mean and sd",
+    study = study
+  )
 }
 
 
@@ -103,7 +119,7 @@ esc_mean_sd <- function(grp1m, grp1sd, grp1n, grp2m, grp2sd, grp2n, totalsd,
 #'
 #' @export
 esc_mean_se <- function(grp1m, grp1se, grp1n, grp2m, grp2se, grp2n,
-                        es.type = c("d", "g", "or", "logit", "r", "cox.or", "cox.log"), study = NULL) {
+                        es.type = c("d", "g", "or", "logit", "r", "f", "eta", "cox.or", "cox.log"), study = NULL) {
   es.type <- match.arg(es.type)
 
   grp1sd <- grp1se * sqrt(grp1n - 1)
