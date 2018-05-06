@@ -1,6 +1,6 @@
-2aec97b5321674c6e16be3bc4a1a0530 *DESCRIPTION
+b3e24387e73bfb69896f33c2c0f5789e *DESCRIPTION
 dcbfccbd6e6bb91e663c61202da827aa *NAMESPACE
-1509bf34ebd53aaf1425d970f5261643 *NEWS.md
+d094e04e0f6490162c94cbea0d909995 *NEWS.md
 69605f4ed2bfba180f85ed3ed92875e9 *R/S3-methods.R
 c00a070a944498683c6c9fa5203ddfd3 *R/combine_esc.R
 173d9ad09013730bb05a67e37dbdbe23 *R/esc.R
@@ -10,7 +10,7 @@ c3d765d8cb3b4fd9ee98083b33dbe98a *R/esc_B.R
 5d41c56bb286a194e21a29d600596fa2 *R/esc_bin_prop.R
 ba038509ac4d3ff2edb6f9b0ea15af43 *R/esc_chisq.R
 43588ba1ea9e062514ba8636b1290b29 *R/esc_d2etasq.R
-ccd38d9df1719d938c91f87d9f9cda22 *R/esc_d2f.R
+c1f1315b2d9679786a0803b2652357ea *R/esc_d2f.R
 8d4d231b2c46b3ccc4c40069435eaa21 *R/esc_d2logit.R
 d8320efc353852ed4e2bc25023cb09f8 *R/esc_d2or.R
 f8a344ce5cba49f8c8316199a86aba40 *R/esc_d2r.R
@@ -24,7 +24,7 @@ a898944fb450ef6c6f38b8e843ebca44 *R/esc_mean_gain.R
 cac1a5dd3e9b2b59e98b97f09f8cd038 *R/esc_z2r.R
 701616e04a12206c4fe9be9004a12f41 *R/hedges_g.R
 f720d712bfe70b5db41747fdae8dac4a *README.md
-8be2c2bf9636d2b1fa673df22238d8bc *build/partial.rdb
+f4ae901237364b668be48978c499e8a2 *build/partial.rdb
 bf1a44681b04c1d46df073d946a8d762 *inst/CITATION
 2d28533425e24e99cf9221688aba0d25 *man/combine_esc.Rd
 0b8765a7d682bec94539831008e6cafe *man/effect_sizes.Rd
