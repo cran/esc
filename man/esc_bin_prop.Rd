@@ -4,8 +4,8 @@
 \alias{esc_bin_prop}
 \title{Compute effect size from binary proportions}
 \usage{
-esc_bin_prop(prop1event, grp1n, prop2event, grp2n, es.type = c("logit", "d",
-  "g", "or", "r", "f", "eta", "cox.d"), study = NULL)
+esc_bin_prop(prop1event, grp1n, prop2event, grp2n, es.type = c("logit",
+  "d", "g", "or", "r", "f", "eta", "cox.d"), study = NULL)
 }
 \arguments{
 \item{prop1event}{Proportion of successes in treatment group (proportion of outcome = yes).}
@@ -22,9 +22,9 @@ esc_bin_prop(prop1event, grp1n, prop2event, grp2n, es.type = c("logit", "d",
   \item{\code{"f"}}{returns effect size Cohen's \code{f}}
   \item{\code{"g"}}{returns adjusted standardized mean difference effect size Hedges' \code{g}}
   \item{\code{"or"}}{returns effect size as odds ratio}
-  \item{\code{"cox.or"}}{returns effect size as Cox-odds ratio (see \code{\link{esc_d2or}} for details)}
+  \item{\code{"cox.or"}}{returns effect size as Cox-odds ratio (see \code{\link{convert_d2or}} for details)}
   \item{\code{"logit"}}{returns effect size as log odds}
-  \item{\code{"cox.log"}}{returns effect size as Cox-log odds (see \code{\link{esc_d2logit}} for details)}
+  \item{\code{"cox.log"}}{returns effect size as Cox-log odds (see \code{\link{convert_d2logit}} for details)}
   \item{\code{"r"}}{returns correlation effect size \code{r}}
   \item{\code{"eta"}}{returns effect size eta squared}
 }}

@@ -4,8 +4,9 @@
 \alias{esc_mean_se}
 \title{Compute effect size from Mean and Standard Error}
 \usage{
-esc_mean_se(grp1m, grp1se, grp1n, grp2m, grp2se, grp2n, es.type = c("d", "g",
-  "or", "logit", "r", "f", "eta", "cox.or", "cox.log"), study = NULL)
+esc_mean_se(grp1m, grp1se, grp1n, grp2m, grp2se, grp2n, r,
+  es.type = c("d", "g", "or", "logit", "r", "f", "eta", "cox.or",
+  "cox.log"), study = NULL)
 }
 \arguments{
 \item{grp1m}{The mean of the first group.}
@@ -20,15 +21,17 @@ esc_mean_se(grp1m, grp1se, grp1n, grp2m, grp2se, grp2n, es.type = c("d", "g",
 
 \item{grp2n}{The sample size of the second group.}
 
+\item{r}{Correlation for within-subject designs (paired samples, repeated measures).}
+
 \item{es.type}{Type of effect size that should be returned.
 \describe{
   \item{\code{"d"}}{returns standardized mean difference effect size \code{d}}
   \item{\code{"f"}}{returns effect size Cohen's \code{f}}
   \item{\code{"g"}}{returns adjusted standardized mean difference effect size Hedges' \code{g}}
   \item{\code{"or"}}{returns effect size as odds ratio}
-  \item{\code{"cox.or"}}{returns effect size as Cox-odds ratio (see \code{\link{esc_d2or}} for details)}
+  \item{\code{"cox.or"}}{returns effect size as Cox-odds ratio (see \code{\link{convert_d2or}} for details)}
   \item{\code{"logit"}}{returns effect size as log odds}
-  \item{\code{"cox.log"}}{returns effect size as Cox-log odds (see \code{\link{esc_d2logit}} for details)}
+  \item{\code{"cox.log"}}{returns effect size as Cox-log odds (see \code{\link{convert_d2logit}} for details)}
   \item{\code{"r"}}{returns correlation effect size \code{r}}
   \item{\code{"eta"}}{returns effect size eta squared}
 }}

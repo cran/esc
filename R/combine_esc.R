@@ -25,8 +25,6 @@
 #'
 #' combine_esc(e1, e2, e3, e4)
 #'
-#' @importFrom purrr map map_df
-#' @importFrom sjmisc remove_empty_cols is_empty empty_cols
 #' @export
 combine_esc <- function(...) {
   # get input
@@ -35,8 +33,8 @@ combine_esc <- function(...) {
   # make sure we have same columns for all effects. for correlation effect sizes,
   # we have columns zr, ci.lo.zr and ci.hi.zr
   obj <- lapply(obj, function(x) {
-    if (!inherits(x, "esc_d2r")) {
-      class(x) <- c(class(x), "esc_d2r")
+    if (!inherits(x, "convert_d2r")) {
+      class(x) <- c(class(x), "convert_d2r")
       # fill non existing values
       x$zr <- NA
       x$ci.lo.zr <- NA
@@ -46,15 +44,15 @@ combine_esc <- function(...) {
     x
   })
 
-  # remove empty columns if we did not have any correlations
-  result <- do.call(rbind, purrr::map(obj, ~as.data.frame(.x)))
+  result <- do.call(rbind, lapply(obj, as.data.frame))
 
   # remove empty cols, if any
-  if (!sjmisc::is_empty(sjmisc::empty_cols(result)))
-    result <- sjmisc::remove_empty_cols(result)
+  empty_cols <- which(colSums(is.na(result)) == nrow(result))
+  if (length(empty_cols) > 0)
+    result <- result[, -empty_cols, drop = FALSE]
 
   # make factor columns character
-  purrr::map_df(result, function(x) if (is.factor(x)) as.character(x) else x)
+  as.data.frame(lapply(result, function(x) if (is.factor(x)) as.character(x) else x))
 }
 
 
@@ -73,7 +71,7 @@ combine_esc <- function(...) {
 #' @note For Western European locales, the \code{sep}-argument probably needs to
 #'       be set to semicolon (\code{sep = ";"}), so Excel reads the csv-file properly.
 #'       If \code{sep = ";"}, \code{\link[utils]{write.csv2}} is used to write the
-#'       file. Else, \code{\link[readr]{write_excel_csv}} is used.
+#'       file. Else, \code{\link[utils]{write.csv}} is used.
 #'
 #' @return Invisibly returns the combined data frame that is written to
 #'         the csv-file (see \code{\link{combine_esc}}).
@@ -94,8 +92,7 @@ combine_esc <- function(...) {
 #' \dontrun{
 #' write_esc(e1, e2, e3, e4, path = "EffSizes")}
 #'
-#' @importFrom readr write_excel_csv
-#' @importFrom utils write.csv2
+#' @importFrom utils write.csv2 write.csv
 #' @export
 write_esc <- function(..., path, sep = ",") {
   # check if file extension exists
@@ -123,7 +120,7 @@ write_esc <- function(..., path, sep = ",") {
   if (sep == ";")
     utils::write.csv2(x, file = path, fileEncoding = "UTF-8")
   else
-    readr::write_excel_csv(x = x, path = path)
+    utils::write.csv(x, file = path, fileEncoding = "UTF-8")
 
   # return data frame
   invisible(x)

@@ -4,8 +4,8 @@
 \alias{esc_t}
 \title{Compute effect size from Student's t-test}
 \usage{
-esc_t(t, p, totaln, grp1n, grp2n, es.type = c("d", "g", "or", "logit", "r",
-  "f", "eta", "cox.or", "cox.log"), study = NULL, ...)
+esc_t(t, p, totaln, grp1n, grp2n, es.type = c("d", "g", "or", "logit",
+  "r", "f", "eta", "cox.or", "cox.log"), study = NULL, ...)
 }
 \arguments{
 \item{t}{The t-value of the t-test. One of \code{t} or \code{p} must be specified.}
@@ -25,9 +25,9 @@ esc_t(t, p, totaln, grp1n, grp2n, es.type = c("d", "g", "or", "logit", "r",
   \item{\code{"f"}}{returns effect size Cohen's \code{f}}
   \item{\code{"g"}}{returns adjusted standardized mean difference effect size Hedges' \code{g}}
   \item{\code{"or"}}{returns effect size as odds ratio}
-  \item{\code{"cox.or"}}{returns effect size as Cox-odds ratio (see \code{\link{esc_d2or}} for details)}
+  \item{\code{"cox.or"}}{returns effect size as Cox-odds ratio (see \code{\link{convert_d2or}} for details)}
   \item{\code{"logit"}}{returns effect size as log odds}
-  \item{\code{"cox.log"}}{returns effect size as Cox-log odds (see \code{\link{esc_d2logit}} for details)}
+  \item{\code{"cox.log"}}{returns effect size as Cox-log odds (see \code{\link{convert_d2logit}} for details)}
   \item{\code{"r"}}{returns correlation effect size \code{r}}
   \item{\code{"eta"}}{returns effect size eta squared}
 }}

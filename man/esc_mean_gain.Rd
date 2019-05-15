@@ -4,10 +4,10 @@
 \alias{esc_mean_gain}
 \title{Compute effect size from Mean Gain Scores and Standard Deviations}
 \usage{
-esc_mean_gain(pre1mean, pre1sd, post1mean, post1sd, grp1n, gain1mean, gain1sd,
-  grp1r, pre2mean, pre2sd, post2mean, post2sd, grp2n, gain2mean, gain2sd, grp2r,
-  es.type = c("d", "g", "or", "logit", "r", "f", "eta", "cox.or", "cox.log"),
-  study = NULL)
+esc_mean_gain(pre1mean, pre1sd, post1mean, post1sd, grp1n, gain1mean,
+  gain1sd, grp1r, pre2mean, pre2sd, post2mean, post2sd, grp2n, gain2mean,
+  gain2sd, grp2r, r, es.type = c("d", "g", "or", "logit", "r", "f",
+  "eta", "cox.or", "cox.log"), study = NULL)
 }
 \arguments{
 \item{pre1mean}{The mean of the first group at pre-test.}
@@ -46,15 +46,17 @@ group.}
 \item{grp2r}{The (estimated) correlation of pre-post scores for the second
 group.}
 
+\item{r}{Correlation for within-subject designs (paired samples, repeated measures).}
+
 \item{es.type}{Type of effect size that should be returned.
 \describe{
   \item{\code{"d"}}{returns standardized mean difference effect size \code{d}}
   \item{\code{"f"}}{returns effect size Cohen's \code{f}}
   \item{\code{"g"}}{returns adjusted standardized mean difference effect size Hedges' \code{g}}
   \item{\code{"or"}}{returns effect size as odds ratio}
-  \item{\code{"cox.or"}}{returns effect size as Cox-odds ratio (see \code{\link{esc_d2or}} for details)}
+  \item{\code{"cox.or"}}{returns effect size as Cox-odds ratio (see \code{\link{convert_d2or}} for details)}
   \item{\code{"logit"}}{returns effect size as log odds}
-  \item{\code{"cox.log"}}{returns effect size as Cox-log odds (see \code{\link{esc_d2logit}} for details)}
+  \item{\code{"cox.log"}}{returns effect size as Cox-log odds (see \code{\link{convert_d2logit}} for details)}
   \item{\code{"r"}}{returns correlation effect size \code{r}}
   \item{\code{"eta"}}{returns effect size eta squared}
 }}

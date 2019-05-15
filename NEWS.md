@@ -1,3 +1,14 @@
+# esc 0.5.0
+
+## General
+
+* Reduce package dependencies.
+* Function that convert from one effect size into another are now prefixed with `convert_*()`, instead of `esc_*()` (e.g. `convert_d2r()` instead of `esc_d2r()`).
+
+## Changes to functions
+
+* `esc_mean_sd()`, `esc_mean_se()` and `esc_mean_gain()` can now calculate effect-sizes for within-subject-designs, when argument `r` is given.
+
 # esc 0.4.1
 
 ## Bug fixes
