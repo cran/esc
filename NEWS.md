@@ -1,3 +1,10 @@
+# esc 0.5.1
+
+## General
+
+* Deprecated functions have been removed.
+* Update website (https://strengejacke.github.io/esc).
+
 # esc 0.5.0
 
 ## General
